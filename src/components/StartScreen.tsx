@@ -14,12 +14,12 @@ export const StartScreen: React.FC<StartScreenProps> = ({
   onUpdateSettings,
   onStartGame,
 }) => {
-  const roundOptions: { id: RoundSelection; label: string; desc: string; icon: string; count: string }[] = [
-    { id: 'all', label: '🔥 All 20 Questions', desc: 'The Ultimate Rapid Fire Championship', icon: '🏆', count: '20 Qs' },
-    { id: 1, label: 'Round 1 — Basics', desc: 'Open Source, Linux, Git & Repos', icon: '🌱', count: 'Q1–Q5' },
-    { id: 2, label: 'Round 2 — Git & GitHub', desc: 'PRs, Clones, Forks, Conflicts & Contributing', icon: '🐙', count: 'Q6–Q10' },
-    { id: 3, label: 'Round 3 — Licensing & Security', desc: 'MIT, GPL, Leaked API Keys & Stars', icon: '🛡️', count: 'Q11–Q15' },
-    { id: 4, label: 'Round 4 — Advanced Thinking', desc: 'Vulnerabilities, Strategy & Bus Factor', icon: '🧠', count: 'Q16–Q20' },
+  const roundOptions: { id: RoundSelection; label: string; desc: string; icon: string; count: string; badge?: string }[] = [
+    { id: 'all', label: '🔥 All 20 Questions', desc: '5 Easy Warmup + 15 Hard Mindbenders', icon: '🏆', count: '20 Qs', badge: 'Full Quiz' },
+    { id: 1, label: 'Round 1 — Easy Warmup', desc: 'Pricing, Local Git, Forks & Copyright Traps', icon: '🌱', count: 'Q1–Q5', badge: '5 Easy' },
+    { id: 2, label: 'Round 2 — Git & GitHub Traps', desc: 'Reflog, Fast-Forwards, Secrets & Public Forks', icon: '🐙', count: 'Q6–Q10', badge: '5 Hard' },
+    { id: 3, label: 'Round 3 — Licensing & Supply Chain', desc: 'MIT vs GPL, OSI Criteria & npm CI Traps', icon: '🛡️', count: 'Q11–Q15', badge: '5 Hard' },
+    { id: 4, label: 'Round 4 — Security & Architecture', desc: '100% Coverage Myths, Typosquatting & Bus Factor', icon: '🧠', count: 'Q16–Q20', badge: '5 Hard' },
   ];
 
   const handleStart = () => {
@@ -240,17 +240,45 @@ export const StartScreen: React.FC<StartScreenProps> = ({
                       </div>
                     </div>
                   </div>
-                  <span style={{
-                    fontSize: '0.75rem',
-                    fontFamily: 'var(--font-mono)',
-                    fontWeight: 700,
-                    padding: '4px 10px',
-                    borderRadius: '9999px',
-                    background: isSelected ? 'var(--neon-purple)' : 'rgba(255, 255, 255, 0.06)',
-                    color: '#fff'
-                  }}>
-                    {opt.count}
-                  </span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    {opt.badge && (
+                      <span style={{
+                        fontSize: '0.72rem',
+                        fontFamily: 'var(--font-mono)',
+                        fontWeight: 800,
+                        padding: '3px 8px',
+                        borderRadius: '6px',
+                        background: opt.badge.includes('Easy') 
+                          ? 'rgba(0, 255, 102, 0.15)' 
+                          : opt.badge.includes('Hard') 
+                            ? 'rgba(255, 42, 95, 0.15)' 
+                            : 'rgba(168, 85, 247, 0.15)',
+                        border: opt.badge.includes('Easy')
+                          ? '1px solid rgba(0, 255, 102, 0.4)'
+                          : opt.badge.includes('Hard')
+                            ? '1px solid rgba(255, 42, 95, 0.4)'
+                            : '1px solid rgba(168, 85, 247, 0.4)',
+                        color: opt.badge.includes('Easy')
+                          ? 'var(--neon-green)'
+                          : opt.badge.includes('Hard')
+                            ? '#ff6b8b'
+                            : '#d8b4fe'
+                      }}>
+                        {opt.badge}
+                      </span>
+                    )}
+                    <span style={{
+                      fontSize: '0.75rem',
+                      fontFamily: 'var(--font-mono)',
+                      fontWeight: 700,
+                      padding: '4px 10px',
+                      borderRadius: '9999px',
+                      background: isSelected ? 'var(--neon-purple)' : 'rgba(255, 255, 255, 0.06)',
+                      color: '#fff'
+                    }}>
+                      {opt.count}
+                    </span>
+                  </div>
                 </button>
               );
             })}

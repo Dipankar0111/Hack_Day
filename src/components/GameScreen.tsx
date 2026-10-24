@@ -322,11 +322,18 @@ export const GameScreen: React.FC<GameScreenProps> = ({
         {currentQuestion.tag && (
           <div style={{ marginBottom: '10px' }}>
             <span className="badge-arcade" style={{
-              background: 'rgba(168, 85, 247, 0.15)',
-              color: '#d8b4fe',
-              border: '1px solid rgba(168, 85, 247, 0.35)',
+              background: currentQuestion.tag.includes('Easy')
+                ? 'rgba(0, 255, 102, 0.15)'
+                : 'rgba(255, 42, 95, 0.15)',
+              color: currentQuestion.tag.includes('Easy')
+                ? 'var(--neon-green)'
+                : '#ff6b8b',
+              border: currentQuestion.tag.includes('Easy')
+                ? '1px solid rgba(0, 255, 102, 0.4)'
+                : '1px solid rgba(255, 42, 95, 0.4)',
               fontSize: '0.75rem',
-              padding: '3px 10px'
+              padding: '3px 10px',
+              letterSpacing: '0.04em'
             }}>
               {currentQuestion.tag}
             </span>

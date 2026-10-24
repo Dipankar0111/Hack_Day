@@ -6,12 +6,10 @@ Each question features a strict **10-second countdown**. Choose the best answer 
 
 ---
 
-## ⚡ 4 Rounds of Rapid Fire (5 Easy + 15 Hard with Thinkable Twists)
+## ⚡ 10 Rapid Fire Questions (1 Mark Each)
 
-- **Round 1 — Easy Warmup (Q1–Q5 · 5 Easy):** Open-source binary pricing myths, offline local git commits, private repo visibility, fork independence, and the "no license" copyright trap.
-- **Round 2 — Git & GitHub Traps (Q6–Q10 · 5 Hard):** Rescuing hard-reset commits with `git reflog`, fast-forward branch pointer mechanics, leaked secrets in immutable commit history, rebase hazards on shared branches, and fork network survival after upstream deletion.
-- **Round 3 — Licensing & Supply Chain (Q11–Q15 · 5 Hard):** MIT proprietary bundling vs GPL copyleft, GPL CLI pipe execution boundaries, OSI Criterion 6 and "ethical" license rejections, `npm install` vs `npm ci` lockfile mutation, and why Redis/Elastic switched to source-available licenses.
-- **Round 4 — Security & Architecture (Q16–Q20 · 5 Hard):** The 100% test coverage fallacy, typosquatting supply chain exploits, the Bus Factor of 1 vulnerability, git log metadata leaks when making repos public, and the Tragedy of the Commons in open source.
+- **Round 1 — Git & GitHub Core (Q1–Q5 · 5 Marks):** Git vs GitHub fundamental architecture, GitHub repository forking, non-code community contributions, public vs private repository visibility, and pull request mechanics.
+- **Round 2 — Open Source & Workflows (Q6–Q10 · 5 Marks):** Resolving merge conflicts on identical lines, purpose of `README.md`, open-source licensing (MIT/GPL), `git clone` vs ZIP archives, and professional bug reporting workflows.
 
 ---
 

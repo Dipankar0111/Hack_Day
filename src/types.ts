@@ -7,11 +7,11 @@ export interface QuestionOption {
 
 export interface Question {
   id: string;
-  roundNumber: 1 | 2 | 3 | 4;
+  roundNumber: number;
   roundTitle: string;
-  questionNumber: number; // 1 to 20
+  questionNumber: number; // 1 to 10
   questionText: string;
-  tag?: string; // e.g. "Easy · Conceptual"
+  tag?: string; // e.g. "Git & GitHub"
   options: QuestionOption[];
   correctOption: OptionKey;
   explanation: string;
@@ -33,7 +33,7 @@ export interface PlayerAnswer {
 
 export type ScreenState = 'start' | 'playing' | 'results';
 
-export type RoundSelection = 'all' | 1 | 2 | 3 | 4;
+export type RoundSelection = 'all' | 1 | 2;
 
 export interface GameSettings {
   selectedRound: RoundSelection;

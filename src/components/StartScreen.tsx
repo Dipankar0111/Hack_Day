@@ -15,11 +15,9 @@ export const StartScreen: React.FC<StartScreenProps> = ({
   onStartGame,
 }) => {
   const roundOptions: { id: RoundSelection; label: string; desc: string; icon: string; count: string; badge?: string }[] = [
-    { id: 'all', label: '🔥 All 20 Questions', desc: '5 Easy Warmup + 15 Hard Mindbenders', icon: '🏆', count: '20 Qs', badge: 'Full Quiz' },
-    { id: 1, label: 'Round 1 — Easy Warmup', desc: 'Pricing, Local Git, Forks & Copyright Traps', icon: '🌱', count: 'Q1–Q5', badge: '5 Easy' },
-    { id: 2, label: 'Round 2 — Git & GitHub Traps', desc: 'Reflog, Fast-Forwards, Secrets & Public Forks', icon: '🐙', count: 'Q6–Q10', badge: '5 Hard' },
-    { id: 3, label: 'Round 3 — Licensing & Supply Chain', desc: 'MIT vs GPL, OSI Criteria & npm CI Traps', icon: '🛡️', count: 'Q11–Q15', badge: '5 Hard' },
-    { id: 4, label: 'Round 4 — Security & Architecture', desc: '100% Coverage Myths, Typosquatting & Bus Factor', icon: '🧠', count: 'Q16–Q20', badge: '5 Hard' },
+    { id: 'all', label: '🔥 All 10 Questions', desc: '10 Questions · 1 Mark Each · Rapid Fire', icon: '🏆', count: '10 Qs', badge: 'Full Quiz' },
+    { id: 1, label: 'Round 1 — Git & GitHub Core', desc: 'Git vs GitHub, Forks, Non-code, Visibility & PRs', icon: '🐙', count: 'Q1–Q5', badge: '5 Marks' },
+    { id: 2, label: 'Round 2 — Open Source & Workflows', desc: 'Merge Conflicts, README, Licenses, Clone vs ZIP & Bug Fixes', icon: '🛡️', count: 'Q6–Q10', badge: '5 Marks' },
   ];
 
   const handleStart = () => {
